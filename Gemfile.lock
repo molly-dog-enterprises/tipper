@@ -1,3 +1,15 @@
+PATH
+  remote: app/admin
+  specs:
+    admin (0.0.1)
+      rails (~> 4.2.0)
+
+PATH
+  remote: app/core
+  specs:
+    core (0.0.1)
+      rails (~> 4.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -150,8 +162,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  admin!
   byebug
   coffee-rails (~> 4.1.0)
+  core!
   jbuilder (~> 2.0)
   jquery-rails
   pg

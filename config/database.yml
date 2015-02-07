@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: tipper_production
-  username: tipper
+  username: davidhenry
   password: <%= ENV['TIPPER_DATABASE_PASSWORD'] %>
