@@ -11,11 +11,11 @@
   .field
     = f.label :event_team_id
     br
-    = f.text_field :event_team_id
+    = f.collection_select :team_id, Admin::EventTeam.all, :id, :name
   .field
     = f.label :match_id
     br
-    = f.text_field :match_id
+    = f.collection_select :team_id, Admin::Match.all, :id, :name
   .field
     = f.label :score
     br

@@ -11,10 +11,10 @@
   .field
     = f.label :team_id
     br
-    = f.text_field :team_id
+    = f.collection_select :team_id, Admin::Team.all, :id, :name
   .field
     = f.label :event_id
     br
-    = f.text_field :event_id
+    = f.collection_select :team_id, Admin::Event.all, :id, :name
   .actions
     = f.submit
