@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150208221940) do
+ActiveRecord::Schema.define(version: 20150208230028) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,12 +26,36 @@ ActiveRecord::Schema.define(version: 20150208221940) do
   add_index "event_teams", ["event_id"], name: "index_event_teams_on_event_id", using: :btree
   add_index "event_teams", ["team_id"], name: "index_event_teams_on_team_id", using: :btree
 
+  create_table "event_users", force: :cascade do |t|
+    t.integer  "event_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "event_users", ["event_id"], name: "index_event_users_on_event_id", using: :btree
+  add_index "event_users", ["user_id"], name: "index_event_users_on_user_id", using: :btree
+
   create_table "events", force: :cascade do |t|
     t.string   "name"
     t.string   "event_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "guesses", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "match_id"
+    t.integer  "team_id"
+    t.integer  "by"
+    t.integer  "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "guesses", ["match_id"], name: "index_guesses_on_match_id", using: :btree
+  add_index "guesses", ["team_id"], name: "index_guesses_on_team_id", using: :btree
+  add_index "guesses", ["user_id"], name: "index_guesses_on_user_id", using: :btree
 
   create_table "matches", force: :cascade do |t|
     t.integer  "event_id"
@@ -60,8 +84,20 @@ ActiveRecord::Schema.define(version: 20150208221940) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "event_teams", "events"
   add_foreign_key "event_teams", "teams"
+  add_foreign_key "event_users", "events"
+  add_foreign_key "event_users", "users"
+  add_foreign_key "guesses", "matches"
+  add_foreign_key "guesses", "teams"
+  add_foreign_key "guesses", "users"
   add_foreign_key "matches", "events"
   add_foreign_key "sides", "event_teams"
   add_foreign_key "sides", "matches"
