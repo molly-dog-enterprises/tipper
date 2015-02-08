@@ -3,8 +3,7 @@ Rugby tipper application
 
 ## Core
 
-0.0.1
-Status endpoint only
+* _0.0.1_ Status endpoint only
 
 ## Admin
-0.0.1
+* _0.0.1_ Scaffolded interface for data management 
