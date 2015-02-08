@@ -1,0 +1,17 @@
+p#notice
+  = notice
+p
+  strong
+    | Event team:
+  = @side.event_team
+p
+  strong
+    | Match:
+  = @side.match
+p
+  strong
+    | Score:
+  = @side.score
+= link_to 'Edit', edit_side_path(@side)
+|  | 
+= link_to 'Back', sides_path

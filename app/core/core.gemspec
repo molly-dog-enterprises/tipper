@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.authors     = ["David Henry"]
   s.email       = ["dw_henry@yahoo.com.au"]
   # s.homepage    = "TODO"
-  # s.summary     = "TODO: Summary of Core."
+  s.summary     = "API implementation."
   # s.description = "TODO: Description of Core."
   s.license     = "MIT"
 

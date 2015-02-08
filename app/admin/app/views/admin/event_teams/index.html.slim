@@ -1,0 +1,27 @@
+p#notice
+  = notice
+h1
+  | Listing Event Teams
+table
+  thead
+    tr
+      th
+        | Team
+      th
+        | Event
+      th[colspan="3"]
+  tbody
+    - @event_teams.each do |event_team|
+      tr
+        td
+          = event_team.team
+        td
+          = event_team.event
+        td
+          = link_to 'Show', event_team
+        td
+          = link_to 'Edit', edit_event_team_path(event_team)
+        td
+          = link_to 'Destroy', event_team, method: :delete, data: { confirm: 'Are you sure?' }
+br
+= link_to 'New Event team', new_event_team_path

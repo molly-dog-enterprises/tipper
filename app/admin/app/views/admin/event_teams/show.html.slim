@@ -1,0 +1,13 @@
+p#notice
+  = notice
+p
+  strong
+    | Team:
+  = @event_team.team
+p
+  strong
+    | Event:
+  = @event_team.event
+= link_to 'Edit', edit_event_team_path(@event_team)
+|  | 
+= link_to 'Back', event_teams_path

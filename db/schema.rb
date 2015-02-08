@@ -11,9 +11,58 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150208221940) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "event_teams", force: :cascade do |t|
+    t.integer  "team_id"
+    t.integer  "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "event_teams", ["event_id"], name: "index_event_teams_on_event_id", using: :btree
+  add_index "event_teams", ["team_id"], name: "index_event_teams_on_team_id", using: :btree
+
+  create_table "events", force: :cascade do |t|
+    t.string   "name"
+    t.string   "event_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "matches", force: :cascade do |t|
+    t.integer  "event_id"
+    t.string   "location"
+    t.datetime "start_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "matches", ["event_id"], name: "index_matches_on_event_id", using: :btree
+
+  create_table "sides", force: :cascade do |t|
+    t.integer  "event_team_id"
+    t.integer  "match_id"
+    t.integer  "score"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "sides", ["event_team_id"], name: "index_sides_on_event_team_id", using: :btree
+  add_index "sides", ["match_id"], name: "index_sides_on_match_id", using: :btree
+
+  create_table "teams", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "event_teams", "events"
+  add_foreign_key "event_teams", "teams"
+  add_foreign_key "matches", "events"
+  add_foreign_key "sides", "event_teams"
+  add_foreign_key "sides", "matches"
 end

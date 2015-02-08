@@ -1,0 +1,24 @@
+= form_for(@side) do |f|
+  - if @side.errors.any?
+    #error_explanation
+      h2
+        = pluralize(@side.errors.count, "error")
+        |  prohibited this side from being saved:
+      ul
+        - @side.errors.full_messages.each do |message|
+          li
+            = message
+  .field
+    = f.label :event_team_id
+    br
+    = f.text_field :event_team_id
+  .field
+    = f.label :match_id
+    br
+    = f.text_field :match_id
+  .field
+    = f.label :score
+    br
+    = f.number_field :score
+  .actions
+    = f.submit

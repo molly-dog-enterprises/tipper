@@ -1,0 +1,31 @@
+p#notice
+  = notice
+h1
+  | Listing Sides
+table
+  thead
+    tr
+      th
+        | Event team
+      th
+        | Match
+      th
+        | Score
+      th[colspan="3"]
+  tbody
+    - @sides.each do |side|
+      tr
+        td
+          = side.event_team
+        td
+          = side.match
+        td
+          = side.score
+        td
+          = link_to 'Show', side
+        td
+          = link_to 'Edit', edit_side_path(side)
+        td
+          = link_to 'Destroy', side, method: :delete, data: { confirm: 'Are you sure?' }
+br
+= link_to 'New Side', new_side_path

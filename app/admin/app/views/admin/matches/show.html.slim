@@ -1,0 +1,17 @@
+p#notice
+  = notice
+p
+  strong
+    | Event:
+  = @match.event
+p
+  strong
+    | Location:
+  = @match.location
+p
+  strong
+    | Start time:
+  = @match.start_time
+= link_to 'Edit', edit_match_path(@match)
+|  | 
+= link_to 'Back', matches_path
