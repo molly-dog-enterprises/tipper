@@ -7,7 +7,7 @@ PATH
 PATH
   remote: app/core
   specs:
-    core (0.0.2)
+    core (0.0.3)
       rails (~> 4.2.0)
 
 GEM
