@@ -1,0 +1,49 @@
+id,match_date,kick_off,location,name,description,created_at,updated_at
+1,2011-09-09,20.3,"Auckland, Eden Park",New Zealand v Tonga,New Zealand v Tonga,2011-09-08 05:05:24.918379,2011-09-08 05:05:24.918379
+2,2011-09-10,13,"Invercargill, Rugby Park Stadium",Scotland v Romania,Scotland v Romania,2011-09-08 05:05:25.008381,2011-09-08 05:05:25.008381
+3,2011-09-10,15.3,"Rotorua, Rotorua International Stadium",Fiji v Namibia,Fiji v Namibia,2011-09-08 05:05:25.017872,2011-09-08 05:05:25.017872
+4,2011-09-10,18,"Auckland, North Harbour Stadium",France v Japan,France v Japan,2011-09-08 05:05:25.028979,2011-09-08 05:05:25.028979
+5,2011-09-10,20.3,"Dunedin, Otago Stadium",Argentina v England,Argentina v England,2011-09-08 05:05:25.042562,2011-09-08 05:05:25.042562
+6,2011-09-11,15.3,"Auckland, North Harbour Stadium",Australia v Italy,Australia v Italy,2011-09-08 05:05:25.114764,2011-09-08 05:05:25.114764
+7,2011-09-11,18,"New Plymouth, Stadium Taranaki",Ireland v USA,Ireland v USA,2011-09-08 05:05:25.123411,2011-09-08 05:05:25.123411
+8,2011-09-11,20.3,"Wellington, Wellington Regional Stadium",South Africa v Wales,South Africa v Wales,2011-09-08 05:05:25.131539,2011-09-08 05:05:25.131539
+9,2011-09-14,14.3,"Rotorua, Rotorua International Stadium",Samoa v Namibia,Samoa v Namibia,2011-09-08 05:05:25.138225,2011-09-08 05:05:25.138225
+10,2011-09-14,17,"Whangarei, Northland Events Centre",Tonga v Canada,Tonga v Canada,2011-09-08 05:05:25.169202,2011-09-08 05:05:25.169202
+11,2011-09-14,19.3,"Invercargill, Rugby Park Stadium",Scotland v Georgia,Scotland v Georgia,2011-09-08 05:05:25.224609,2011-09-08 05:05:25.224609
+12,2011-09-15,19.3,"New Plymouth, Stadium Taranaki",Russia v USA,Russia v USA,2011-09-08 05:05:25.232925,2011-09-08 05:05:25.232925
+13,2011-09-16,20,"Hamilton, Waikato Stadium",New Zealand v Japan,New Zealand v Japan,2011-09-08 05:05:25.246898,2011-09-08 05:05:25.246898
+14,2011-09-17,15.3,"Invercargill, Rugby Park Stadium",Argentina v Romania,Argentina v Romania,2011-09-08 05:05:25.252832,2011-09-08 05:05:25.252832
+15,2011-09-17,18,"Wellington, Wellington Regional Stadium",South Africa v Fiji,South Africa v Fiji,2011-09-08 05:05:25.257704,2011-09-08 05:05:25.257704
+16,2011-09-17,20.3,"Auckland, Eden Park",Australia v Ireland,Australia v Ireland,2011-09-08 05:05:25.26274,2011-09-08 05:05:25.26274
+17,2011-09-18,15.3,"Hamilton, Waikato Stadium",Wales v Samoa,Wales v Samoa,2011-09-08 05:05:25.267368,2011-09-08 05:05:25.267368
+18,2011-09-18,18,"Dunedin, Otago Stadium",England v Georgia,England v Georgia,2011-09-08 05:05:25.271769,2011-09-08 05:05:25.271769
+19,2011-09-18,20.3,"Napier, McLean Park",France v Canada,France v Canada,2011-09-08 05:05:25.277016,2011-09-08 05:05:25.277016
+20,2011-09-20,19.3,"Nelson, Trafalgar Park",Italy v Russia,Italy v Russia,2011-09-08 05:05:25.285161,2011-09-08 05:05:25.285161
+21,2011-09-21,19.3,"Whangarei, Northland Events Centre",Tonga v Japan,Tonga v Japan,2011-09-08 05:05:25.292708,2011-09-08 05:05:25.292708
+22,2011-09-22,20,"Auckland, North Harbour Stadium",South Africa v Namibia,South Africa v Namibia,2011-09-08 05:05:25.298077,2011-09-08 05:05:25.298077
+23,2011-09-23,20.3,"Wellington, Wellington Regional Stadium",Australia v USA,Australia v USA,2011-09-08 05:05:25.302581,2011-09-08 05:05:25.302581
+24,2011-09-24,18,"Dunedin, Otago Stadium",England v Romania,England v Romania,2011-09-08 05:05:25.30866,2011-09-08 05:05:25.30866
+25,2011-09-24,20.3,"Auckland, Eden Park",New Zealand v France,New Zealand v France,2011-09-08 05:05:25.31324,2011-09-08 05:05:25.31324
+26,2011-09-25,15.3,"Auckland, Eden Park",Fiji v Samoa,Fiji v Samoa,2011-09-08 05:05:25.318112,2011-09-08 05:05:25.318112
+27,2011-09-25,18,"Rotorua, Rotorua International Stadium",Ireland v Russia,Ireland v Russia,2011-09-08 05:05:25.324076,2011-09-08 05:05:25.324076
+28,2011-09-25,20.3,"Wellington, Wellington Regional Stadium",Argentina v Scotland,Argentina v Scotland,2011-09-08 05:05:25.338277,2011-09-08 05:05:25.338277
+29,2011-09-26,19.3,"New Plymouth, Stadium Taranaki",Wales v Namibia,Wales v Namibia,2011-09-08 05:05:25.387251,2011-09-08 05:05:25.387251
+30,2011-09-27,17,"Napier, McLean Park",Canada v Japan,Canada v Japan,2011-09-08 05:05:25.402804,2011-09-08 05:05:25.402804
+31,2011-09-27,19.3,"Nelson, Trafalgar Park",Italy v USA,Italy v USA,2011-09-08 05:05:25.418414,2011-09-08 05:05:25.418414
+32,2011-09-28,19.3,"Palmerston North, Arena Manawatu",Georgia v Romania,Georgia v Romania,2011-09-08 05:05:25.434383,2011-09-08 05:05:25.434383
+33,2011-09-30,20.3,"Auckland, North Harbour Stadium",South Africa v Samoa,South Africa v Samoa,2011-09-08 05:05:25.4414,2011-09-08 05:05:25.4414
+34,2011-10-01,15.3,"Nelson, Trafalgar Park",Australia v Russia,Australia v Russia,2011-09-08 05:05:25.449487,2011-09-08 05:05:25.449487
+35,2011-10-01,18,"Wellington, Wellington Regional Stadium",France v Tonga,France v Tonga,2011-09-08 05:05:25.455136,2011-09-08 05:05:25.455136
+36,2011-10-01,20.3,"Auckland, Eden Park",England v Scotland,England v Scotland,2011-09-08 05:05:25.460586,2011-09-08 05:05:25.460586
+37,2011-10-02,13,"Palmerston North, Arena Manawatu",Argentina v Georgia,Argentina v Georgia,2011-09-08 05:05:25.4688,2011-09-08 05:05:25.4688
+38,2011-10-02,15.3,"Wellington, Wellington Regional Stadium",New Zealand v Canada,New Zealand v Canada,2011-09-08 05:05:25.494774,2011-09-08 05:05:25.494774
+39,2011-10-02,18,"Hamilton, Waikato Stadium",Wales v Fiji,Wales v Fiji,2011-09-08 05:05:25.509087,2011-09-08 05:05:25.509087
+40,2011-10-02,20.3,"Dunedin, Otago Stadium",Ireland v Italy,Ireland v Italy,2011-09-08 05:05:25.515092,2011-09-08 05:05:25.515092
+42,2011-10-08,20.3,"Auckland, Eden Park",Win B v 2nd A,Q2,2011-09-08 05:05:25.518946,2011-10-06 08:49:01.754761
+43,2011-10-09,18,"Wellington, Wellington Regional Stadium",Win D v 2nd C,Q3,2011-09-08 05:05:25.520942,2011-10-06 08:49:01.763362
+44,2011-10-09,20.3,"Auckland, Eden Park",Win A v 2nd B,Q4,2011-09-08 05:05:25.534905,2011-10-06 08:49:01.791381
+45,2011-10-15,21,"Auckland, Eden Park",Win Q1 v Win Q2,S1,2011-09-08 05:05:25.537216,2011-10-12 12:42:09.349355
+46,2011-10-16,21,"Auckland, Eden Park",Win Q3 v Win Q4,S2,2011-09-08 05:05:25.540039,2011-10-12 12:42:09.37574
+47,2011-10-21,20.3,"Auckland, Eden Park",Loss S1 v Loss S2,Bronze,2011-09-08 05:05:25.542012,2011-10-20 09:42:05.483476
+48,2011-10-23,21,"Auckland, Eden Park",Win S1 v Win S2,Final,2011-09-08 05:05:25.544317,2011-10-20 09:42:05.503772
+41,2011-10-08,18,"Wellington, Wellington Regional Stadium",Win C v 2nd D,Q1,2011-09-08 05:05:25.517195,2011-10-06 08:49:01.734795
