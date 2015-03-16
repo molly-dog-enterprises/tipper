@@ -21,4 +21,6 @@ end
 
 gemspec path: "app/core"
 gemspec path: "app/admin"
+gemspec path: "app/site"
+
 gem 'slim'
