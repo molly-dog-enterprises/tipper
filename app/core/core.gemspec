@@ -7,8 +7,8 @@ require "core/version"
 Gem::Specification.new do |s|
   s.name        = "core"
   s.version     = Core::VERSION
-  s.authors     = ["David Henry"]
-  s.email       = ["dw_henry@yahoo.com.au"]
+  s.authors     = ["David Henry", "Philip Stevens"]
+  s.email       = ["david@decoybecoy.com", "cokofreedom@gmail.com"]
   # s.homepage    = "TODO"
   s.summary     = "API implementation."
   # s.description = "TODO: Description of Core."

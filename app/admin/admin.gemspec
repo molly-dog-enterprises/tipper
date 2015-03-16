@@ -7,8 +7,8 @@ require "admin/version"
 Gem::Specification.new do |s|
   s.name        = "admin"
   s.version     = Admin::VERSION
-  s.authors     = ["David Henry"]
-  s.email       = ["dw_henry@yahoo.com.au"]
+  s.authors     = ["David Henry", "Philip Stevens"]
+  s.email       = ["david@decoybecoy.com", "cokofreedom@gmail.com"]
   # s.homepage    = "TODO"
   s.summary     = "Admin interface for the application."
   # s.description = "TODO: Description of Admin."
