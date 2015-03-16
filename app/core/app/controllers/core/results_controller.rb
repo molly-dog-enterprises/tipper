@@ -2,11 +2,12 @@ module Core
   class ResultsController < Core::ApplicationController
     skip_before_action :protect_from_forgery
     def index
-      results = Match.includes(sides: {event_team: :team}).where.not(sides: {score: nil})
+      # TODO: delete this code it is for POC only
+      results = Match.includes(:home_team, :away_team).where.not(sides: {score: nil})
       results = results.map do |result|
         {
-          homeTeam: result.sides.first.event_team.team.name,
-          awayTeam: result.sides.last.event_team.team.name,
+          homeTeam: result.home_team.name,
+          awayTeam: result.away_team.name,
           score: result.sides.map(&:score).join(' v '),
         }
       end

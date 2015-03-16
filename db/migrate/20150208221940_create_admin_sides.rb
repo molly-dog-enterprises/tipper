@@ -3,6 +3,7 @@ class CreateAdminSides < ActiveRecord::Migration
     create_table :sides do |t|
       t.references :event_team, index: true
       t.references :match, index: true
+      t.string :location
       t.integer :score
 
       t.timestamps null: false

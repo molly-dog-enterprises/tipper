@@ -7,7 +7,7 @@ class LoadHistoricalData
     create_teams(event)
     create_matches(event)
     create_users(event)
-    # create_guesses
+    create_guesses
   end
 
   def create_event
@@ -31,15 +31,15 @@ class LoadHistoricalData
         # description: row['description'],
         start_time: Date.parse(row['match_date']).to_time + (3600 * row['lick_odd'].to_i).seconds
       )
-      @mappings[:matchs][row['id']] = match
+      @mappings[:matches][row['id']] = match
     end
 
     data('sides.csv').each do |row|
       Admin::Side.find_or_create_by!(
-        match_id: lookup(:matchs, row['match_id']),
+        match_id: lookup(:matches, row['match_id']),
         event_team_id: lookup(:teams, row['team_id']),
         score: row['score'],
-        # team: row['side']
+        location: row['side']
       )
     end
   end
@@ -62,12 +62,16 @@ class LoadHistoricalData
 
   def create_guesses
     data('picks.csv').each do |row|
-      match = lookup(:matchs, row['match_id'], false)
+      match = lookup(:matches, row['match_id'], false)
+      unless user = lookup(:users, row['user_id'], false)
+        puts row
+        next
+      end
       Core::Guess.find_or_create_by!(
-        user_id: lookup(:users, row['user_id']),
-        match_id: lookup(:matchs, row['match_id']),
-        team: row['pick'] > 0 ? match.sides.first : match.sides.last,
-        by: row['pick'].abs,
+        user_id: user.id,
+        match_id: match.id,
+        team_id: row['pick'].to_i > 0 ? match.sides.find_by(location: 'home').event_team.team_id : match.sides.find_by(location: 'away').event_team.team_id,
+        by: row['pick'].to_i.abs,
       )
     end
   end

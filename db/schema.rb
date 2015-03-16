@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 20150208230028) do
   create_table "sides", force: :cascade do |t|
     t.integer  "event_team_id"
     t.integer  "match_id"
+    t.string   "location"
     t.integer  "score"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
