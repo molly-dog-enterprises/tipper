@@ -1,1 +1,1 @@
-#leagues data-initial="#{Core::Event.all.map{|l| {name: l.name, description: l.name, player_count: l.users.count, password_protected: false} }.to_json}"
+#leagues data-initial="#{Core::Event.all.map{|l| {id: l.id, name: l.name, description: l.name, player_count: l.users.count, password_protected: false} }.to_json}"
