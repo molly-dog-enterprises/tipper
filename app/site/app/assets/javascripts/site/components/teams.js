@@ -4,7 +4,7 @@ $(function() {
     render: function () {
       var fields = [
         {name: 'name', header: 'Name'},
-        {name: 'name', header: 'Description'},
+        {name: 'description', header: 'Description'},
         {name: 'win_count', header: 'Wins'},
       ];
 

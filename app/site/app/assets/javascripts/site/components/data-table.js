@@ -4,9 +4,12 @@ $(function() {
     render: function () {
       var self = this;
       var fields = this.props.fields.map(function (field) {
-        return (
-          <td>{self.props.row[field.name]}</td>
-          )
+        var val = self.props.row[field.name],
+          key = self.props.row.id + '-' + field.name
+
+        if(field.method) { val = field.method(val) }
+
+        return (<td key={key}>{val}</td>)
       });
       return (
         <tr key={self.props.row.id}>{fields}</tr>
@@ -17,9 +20,7 @@ $(function() {
   var DataTableHeader = React.createClass({
     render: function () {
       var fields = this.props.fields.map(function (field) {
-        return (
-          <th>{field.header}</th>
-          )
+        return (<th key={field.name}>{field.header}</th>)
       });
 
       return (
@@ -42,11 +43,10 @@ $(function() {
       this.setDataState($('#' + this.props.initialDataElement).data('initial'));
     },
     render: function () {
-      console.log('rendering');
       var self = this;
       var rows = this.state.data.map(function (row) {
         return (
-          <DataTableRow row={row} fields={self.props.fields} />
+          <DataTableRow key={row.id} row={row} fields={self.props.fields} />
         )
       });
 
@@ -58,5 +58,4 @@ $(function() {
       );
     }
   });
-
 });
