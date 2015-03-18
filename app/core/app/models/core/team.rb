@@ -4,6 +4,7 @@ module Core
     self.table_name = :teams
 
     def self.json
+      # TODO: delete this
       all.map(&:as_json).to_json
     end
 

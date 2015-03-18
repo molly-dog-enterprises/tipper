@@ -7,6 +7,7 @@ module Core
     has_many :users, through: :event_users
 
     def self.json
+      # TODO: delete this
       all.map(&:as_json).to_json
     end
 

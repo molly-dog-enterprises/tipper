@@ -14,8 +14,10 @@ $(function() {
     }
   });
 
-  React.render(
-    <Teams  />,
-    document.getElementById('teams')
-  );
+  if(document.getElementById('teams')) {
+    React.render(
+      <Teams  />,
+      document.getElementById('teams')
+    );
+  }
 });

@@ -4,14 +4,23 @@ class LoadHistoricalData
   def run
     @mappings = Hash.new { |h, k| h[k] = {} }
     event = create_event
+    leagues = create_leagues(event)
     create_teams(event)
     create_matches(event)
-    create_users(event)
+    create_users(event, leagues)
     create_guesses
   end
 
   def create_event
     Admin::Event.find_or_create_by!(name: 'RWC 2011', event_type: 'ruby')
+  end
+
+  def create_leagues(event)
+    {
+      all: Core::League.find_or_create_by!(name: 'All players', description: 'A League for all players', event_id: event.id),
+      aus: Core::League.find_or_create_by!(name: 'Australians', description: 'A League for australian players', event_id: event.id),
+      eng: Core::League.find_or_create_by!(name: 'English', description: 'A League for english players', event_id: event.id),
+    }
   end
 
   def create_teams(event)
@@ -44,7 +53,7 @@ class LoadHistoricalData
     end
   end
 
-  def create_users(event)
+  def create_users(event, leagues)
     data('users.csv').each do |row|
       user = Core::User.find_or_create_by!(
         # login: row['login'],
@@ -52,10 +61,17 @@ class LoadHistoricalData
         email: row['email'],
         # team_id: row['team_id'],
       )
-      Core::EventUser.find_or_create_by!(
+      event_user = Core::EventUser.find_or_create_by!(
         user_id: user.id,
         event_id: event.id
       )
+      leagues[:all].event_users << event_user
+      team = Core::EventTeam.find(lookup(:teams, row['team_id'])).team
+      if team.name =~ /Aus/
+        leagues[:aus].event_users << event_user
+      elsif team.name =~ /Eng/
+        leagues[:eng].event_users << event_user
+      end
       @mappings[:users][row['id']] = user
     end
   end

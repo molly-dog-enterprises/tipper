@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150208230028) do
+ActiveRecord::Schema.define(version: 20150318211419) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,25 @@ ActiveRecord::Schema.define(version: 20150208230028) do
   add_index "guesses", ["team_id"], name: "index_guesses_on_team_id", using: :btree
   add_index "guesses", ["user_id"], name: "index_guesses_on_user_id", using: :btree
 
+  create_table "league_event_users", force: :cascade do |t|
+    t.integer  "league_id"
+    t.integer  "event_user_id"
+    t.boolean  "admin"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "league_event_users", ["league_id"], name: "index_league_event_users_on_league_id", using: :btree
+
+  create_table "leagues", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "password"
+    t.integer  "event_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "matches", force: :cascade do |t|
     t.integer  "event_id"
     t.string   "location"
@@ -99,6 +118,7 @@ ActiveRecord::Schema.define(version: 20150208230028) do
   add_foreign_key "guesses", "matches"
   add_foreign_key "guesses", "teams"
   add_foreign_key "guesses", "users"
+  add_foreign_key "league_event_users", "leagues"
   add_foreign_key "matches", "events"
   add_foreign_key "sides", "event_teams"
   add_foreign_key "sides", "matches"

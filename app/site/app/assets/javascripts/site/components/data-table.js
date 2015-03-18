@@ -5,9 +5,9 @@ $(function() {
       var self = this;
       var fields = this.props.fields.map(function (field) {
         var val = self.props.row[field.name],
-          key = self.props.row.id + '-' + field.name
+          key = self.props.row.id + '-' + field.name;
 
-        if(field.method) { val = field.method(val) }
+        if(field.method) { val = field.method(self.props.row) }
 
         return (<td key={key}>{val}</td>)
       });
