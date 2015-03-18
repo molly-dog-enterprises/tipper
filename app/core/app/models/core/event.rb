@@ -5,5 +5,19 @@ module Core
 
     has_many :event_users
     has_many :users, through: :event_users
+
+    def self.json
+      all.map(&:as_json).to_json
+    end
+
+    def as_json(*args)
+      {
+        id: id,
+        name: name,
+        description: name,
+        player_count: users.count,
+        password_protected: false
+      }
+    end
   end
 end
