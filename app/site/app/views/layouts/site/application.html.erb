@@ -2,8 +2,12 @@
 <html>
 <head>
   <title>Site</title>
+  <!--<script src="http://fb.me/react-0.12.2.js"></script>-->
+  <!--<script src="http://fb.me/JSXTransformer-0.12.2.js"></script>-->
+  <%= javascript_include_tag "local_cdn/react-0.12.2", "local_cdn/JSXTransformer-0.12.2" %>
+  <%= javascript_include_tag "site/application", type: "text/jsx" %>
   <%= stylesheet_link_tag    "site/application", media: "all" %>
-  <%= javascript_include_tag "site/application" %>
+
   <%= csrf_meta_tags %>
 </head>
 <body>

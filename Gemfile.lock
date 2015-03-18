@@ -15,6 +15,7 @@ PATH
   specs:
     site (0.0.1)
       rails (~> 4.2.0)
+      slim
 
 GEM
   remote: https://rubygems.org/
