@@ -17,10 +17,14 @@ $(function() {
     render: function () {
       var self = this;
       var fields = this.props.fields.map(function (field) {
-        var val = self.props.row[field.name],
+        var val,
           key = self.props.row.id + '-' + field.name;
 
-        if(field.method) { val = field.method(self.props.row) }
+        if(field.method) {
+          val = field.method(self.props.row);
+        } else {
+          val = self.props.row[field.name];
+        }
 
         return (<td key={key}>{val}</td>)
       });

@@ -1,0 +1,14 @@
+.data-header {
+  padding: 20px;
+
+  .label {
+    display: inline-block;
+    min-width: 200px;
+    color: #999;
+  }
+  .value {
+    display: inline-block;
+    font-weight: bolder;
+  }
+
+}
