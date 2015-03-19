@@ -1,4 +1,17 @@
 $(function() {
+  function dataRequest(url, binding) {
+    $.ajax({
+      url: url,
+      dataType: 'jsonp',
+      success: function (data) {
+        this.setState({data: data});
+      }.bind(binding),
+      error: function (xhr, status, err) {
+        console.error(url, status, err.toString());
+      }.bind(binding)
+    });
+
+  }
 
   var DataTableRow = React.createClass({
     render: function () {
@@ -40,7 +53,14 @@ $(function() {
         this.setState({data: data})
       };
 
-      this.setDataState($('#' + this.props.initialDataElement).data('initial'));
+      var element = $('#' + this.props.initialDataElement).data('initial');
+
+      if (this.props.url) {
+        var url = this.props.url(element);
+        dataRequest(url, this);
+      } else if (this.props.initialDataElement) {
+        this.setDataState(element);
+      }
     },
     render: function () {
       var self = this;

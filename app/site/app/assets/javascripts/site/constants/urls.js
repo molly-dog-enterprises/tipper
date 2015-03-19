@@ -9,11 +9,15 @@ $(function() {
   };
 
   URLs.Link = {
+    event: '/123',
     league: function (row) {
-      return (<a href={'leagues/' + row.id}>{row.name}</a>)
+      return (<a href={URLs.Link.event + '/leagues/' + row.id}>{row.name}</a>);
+    },
+    leagues: function(row, text) {
+      return (<a href={URLs.Link.event + '/leagues'}>{text || 'leagues'}</a>);
     },
     user: function (row) {
-      return (<a href={'user/' + row.id}>{row.name}</a>)
+      return (<a href={URLs.Link.event + '/user/' + row.id}>{row.name}</a>);
     }
   }
 

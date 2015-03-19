@@ -7,5 +7,9 @@ Core::Engine.routes.draw do
 
   resources :results
 
+  resources :leagues, only: [] do
+    resources :event_users, only: [:index]
+  end
+
   get 'status', to: "status#index"
 end
