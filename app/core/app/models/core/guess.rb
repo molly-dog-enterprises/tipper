@@ -5,11 +5,6 @@ module Core
     belongs_to :match
     belongs_to :team
 
-    def self.json
-      data = includes(:team, match: [:home_team, :away_team])
-      data.map(&:as_json).to_json
-    end
-
     def as_json(*)
       {
         id:     id,

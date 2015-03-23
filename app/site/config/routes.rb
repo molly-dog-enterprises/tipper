@@ -1,7 +1,9 @@
 Site::Engine.routes.draw do
-  resources :event, only: [], path: '/' do
+  resources :events, only: [:index], path: '/' do
     resources :leagues
     resources :users
     resources :teams
   end
+
+
 end
