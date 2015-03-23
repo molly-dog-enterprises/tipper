@@ -2,6 +2,13 @@ $(function() {
 
   var Fields = window.Fields = {};
 
+  Fields.guesses = [
+    {name: 'match', header: 'Match'},
+    {name: 'result', header: 'Result'},
+    {name: 'guess', header: 'Your selection'},
+    {name: 'scope', header: 'Points'},
+  ];
+
   Fields.league = [
     {name: 'name', header: 'Name', method: URLs.Link.league},
     {name: 'description', header: 'Description'},

@@ -5,6 +5,9 @@ $(function() {
   URLs.API = {
     league_event_users: function (row) {
       return '/api/leagues/' + row.id + '/event_users'
+    },
+    user_guesses: function (row) {
+      return '/api/users/' + row.id + '/guesses'
     }
   };
 
@@ -17,7 +20,7 @@ $(function() {
       return (<a href={URLs.Link.event + '/leagues'}>{text || 'leagues'}</a>);
     },
     user: function (row) {
-      return (<a href={URLs.Link.event + '/user/' + row.id}>{row.name}</a>);
+      return (<a href={URLs.Link.event + '/users/' + row.id}>{row.name}</a>);
     }
   }
 
