@@ -24,3 +24,5 @@ gemspec path: "app/admin"
 gemspec path: "app/site"
 
 gem 'slim'
+gem "bootstrap-sass"
+gem 'autoprefixer-rails'

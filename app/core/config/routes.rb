@@ -1,11 +1,11 @@
 Core::Engine.routes.draw do
-  # resources :guesses
-  #
-  # resources :event_users
-  #
-  # resources :users
+  resources :leagues, only: [] do
+    resources :event_users, only: [:index]
+  end
 
-  resources :results
+  resources :users, only: [] do
+    resources :guesses, only: [:index]
+  end
 
   get 'status', to: "status#index"
 end

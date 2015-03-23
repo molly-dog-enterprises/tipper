@@ -11,4 +11,6 @@
 // about supported directives.
 //
 //= require jquery
+//= require ./constants/urls
+//= require ./constants/field-definitions
 //= require_tree ./components

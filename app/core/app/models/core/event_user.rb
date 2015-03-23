@@ -10,11 +10,6 @@ module Core
         where(league_event_users: { league_id: league_id })
     }
 
-    def self.json
-      # TODO: delete this
-      includes(:user).all.map(&:as_json).to_json
-    end
-
     def as_json(*args)
       {
         id: id,
