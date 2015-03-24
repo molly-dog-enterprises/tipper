@@ -2,7 +2,7 @@ $(function() {
   function dataRequest(url, binding) {
     $.ajax({
       url: url,
-      dataType: 'jsonp',
+      dataType: 'json',
       success: function (data) {
         this.setState({data: data});
       }.bind(binding),
