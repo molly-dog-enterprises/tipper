@@ -1,9 +1,14 @@
 $(function() {
 
   var Teams = React.createClass({
+    getInitialState: function() {
+      return {
+        teamsData: $('#teams').data('initial')
+      };
+    },
     render: function () {
       return (
-        <DataTable fields={Fields.team} initialDataElement='teams' />
+        <DataTable fields={Fields.team} initialData={this.state.teamsData} />
         );
     }
   });

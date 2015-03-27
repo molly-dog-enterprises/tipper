@@ -2,7 +2,7 @@ $(function() {
   function dataRequest(url, binding) {
     $.ajax({
       url: url,
-      dataType: 'jsonp',
+      dataType: 'json',
       success: function (data) {
         this.setState({data: data});
       }.bind(binding),
@@ -14,19 +14,21 @@ $(function() {
   }
 
   var DataTableRow = React.createClass({
+    statics: {
+      fieldMethod: function(method, field_name) {
+        return method || function(row) {
+          return row[field_name];
+        }
+      }
+    },
     render: function () {
       var self = this;
       var fields = this.props.fields.map(function (field) {
-        var val,
+        var val = DataTableRow.fieldMethod(field.method, field.name)(self.props.row),
           key = self.props.row.id + '-' + field.name;
-
-        if(field.method) {
-          val = field.method(self.props.row);
-        } else {
-          val = self.props.row[field.name];
-        }
-
         return (<td key={key}>{val}</td>)
+
+
       });
       return (
         <tr key={self.props.row.id}>{fields}</tr>
@@ -48,27 +50,10 @@ $(function() {
     }
   });
 
-  var DataTable = window.DataTable = React.createClass({
-    getInitialState: function() {
-      return { data: [] };
-    },
-    componentDidMount: function() {
-      this.setDataState = function(data) {
-        this.setState({data: data})
-      };
-
-      var element = $('#' + this.props.initialDataElement).data('initial');
-
-      if (this.props.url) {
-        var url = this.props.url(element);
-        dataRequest(url, this);
-      } else if (this.props.initialDataElement) {
-        this.setDataState(element);
-      }
-    },
+  var DataTable = MDE.DataTable = React.createClass({
     render: function () {
       var self = this;
-      var rows = this.state.data.map(function (row) {
+      var rows = this.props.initialData.map(function (row) {
         return (
           <DataTableRow key={row.id} row={row} fields={self.props.fields} />
         )

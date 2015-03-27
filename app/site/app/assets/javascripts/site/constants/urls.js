@@ -1,6 +1,6 @@
 $(function() {
 
-  var URLs = window.URLs = { };
+  var URLs = MDE.URLs = { };
 
   URLs.API = {
     league_event_users: function (row) {

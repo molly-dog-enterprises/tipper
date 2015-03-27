@@ -1,6 +1,6 @@
 $(function() {
 
-  var Fields = window.Fields = {};
+  var Fields = MDE.Fields = {};
 
   Fields.guesses = [
     {name: 'match', header: 'Match'},
@@ -10,7 +10,7 @@ $(function() {
   ];
 
   Fields.league = [
-    {name: 'name', header: 'Name', method: URLs.Link.league},
+    {name: 'name', header: 'Name', method: MDE.URLs.Link.league},
     {name: 'description', header: 'Description'},
     {name: 'player_count', header: 'Player Count'},
     {name: 'password_protected', header: 'Password Required', method: function(row) { return row.password_protected ? 'YES' : 'NO' }},
@@ -23,7 +23,7 @@ $(function() {
   ];
 
   Fields.user = [
-    {name: 'name', header: 'Name', method: URLs.Link.user},
+    {name: 'name', header: 'Name', method: MDE.URLs.Link.user},
     {name: 'email', header: 'e-mail'},
     {name: 'team', header: 'Favourite Team'},
   ];
