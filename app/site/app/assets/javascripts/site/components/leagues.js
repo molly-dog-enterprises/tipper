@@ -1,10 +1,14 @@
 $(function() {
 
   var Leagues = React.createClass({
+    getInitialState: function() {
+      return {
+        leaguesData: $('#leagues').data('initial')
+      };
+    },
     render: function () {
-
       return (
-        <DataTable fields={Fields.league} initialDataElement='leagues' />
+        <DataTable fields={Fields.league} initialData={this.state.leaguesData} />
         );
     }
   });

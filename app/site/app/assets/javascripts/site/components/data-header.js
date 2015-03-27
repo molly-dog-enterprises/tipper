@@ -18,22 +18,11 @@ $(function() {
     }
   });
 
-  var DataHeader = window.DataHeader = React.createClass({
-    getInitialState: function() {
-      return { data: [] };
-    },
-    componentDidMount: function() {
-      this.setDataState = function(data) {
-        this.setState({data: data})
-      };
-
-      var element = $('#' + this.props.initialDataElement).data('initial');
-      this.setDataState(element);
-    },
+  var DataHeader = MDE.DataHeader = React.createClass({
     render: function () {
       var self = this;
       var rows = this.props.fields.map(function (field) {
-        return (<HeaderRow key={field.name} data={self.state.data} field={field} />)
+        return (<HeaderRow key={field.name} data={self.props.initialData} field={field} />)
       });
 
       return (<div className='data-header'>{rows}</div>);
