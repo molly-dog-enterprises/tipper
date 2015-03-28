@@ -8,7 +8,7 @@ $(function() {
     },
     render: function () {
       return (
-        <DataTable fields={Fields.league} initialData={this.state.leaguesData} />
+        <MDE.DataTable fields={MDE.Fields.league} initialData={this.state.leaguesData} />
         );
     }
   });

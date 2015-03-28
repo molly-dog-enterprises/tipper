@@ -1,3 +1,5 @@
-H1 Players in the League
+- content_for :header do
+  h1 Players in the League
 
-= render 'site/components/league', league_id: params[:id]
+article
+  = render 'site/components/league', league_id: params[:id]

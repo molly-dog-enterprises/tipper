@@ -1,0 +1,24 @@
+doctype html
+html lang="en"
+head
+  meta charset="utf-8"
+
+  = javascript_include_tag "local_cdn/react-0.12.2", "local_cdn/JSXTransformer-0.12.2"
+  javascript:
+    window.MDE = {};
+  = javascript_include_tag "site/application", type: "text/jsx"
+  = stylesheet_link_tag    "site/application", media: "all"
+  = csrf_meta_tags
+
+body.container
+  header
+    = yield :header
+
+  section.columns
+    .four-fifths.column
+      = yield
+    .one-fifth.column
+      nav.menu
+        a.menu-item href="#" Events
+        a.menu-item href="#" Leagues
+        a.menu-item href="#" Users

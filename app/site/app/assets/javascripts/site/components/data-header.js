@@ -1,5 +1,4 @@
 $(function() {
-
   var HeaderRow = React.createClass({
     render: function () {
       var val;
@@ -18,7 +17,7 @@ $(function() {
     }
   });
 
-  var DataHeader = MDE.DataHeader = React.createClass({
+  var DataHeader = window.MDE.DataHeader = React.createClass({
     render: function () {
       var self = this;
       var rows = this.props.fields.map(function (field) {
