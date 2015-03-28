@@ -1,5 +1,4 @@
 $(function() {
-
   var User = React.createClass({
     getInitialState: function() {
       return {
@@ -13,8 +12,8 @@ $(function() {
         this.setState({usersData: data})
       };
 
-      var url = URLs.API.league_event_users(this.state.leagueData);
-      AJAXER(url).success(function(data) {
+      var url = MDE.URLs.API.league_event_users(this.state.leagueData);
+      MDE.AJAX_REQUESTER(url).success(function(data) {
         self.setState({usersData: data});
       })
     },
@@ -23,9 +22,9 @@ $(function() {
     render: function () {
       return (
         <div>
-          {URLs.Link.leagues(null, 'Back to leagues')}
-          <DataHeader fields={Fields.user} initialData={this.state.userData} />
-          <DataTable fields={Fields.guesses} initialData={this.state.guessesData} />
+          {MDE.URLs.Link.leagues(null, 'Back to leagues')}
+          <MDE.DataHeader fields={MDE.Fields.user} initialData={this.state.userData} />
+          <MDE.DataTable fields={MDE.Fields.guesses} initialData={this.state.guessesData} />
         </div>
       );
     }

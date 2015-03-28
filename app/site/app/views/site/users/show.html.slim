@@ -1,3 +1,5 @@
-H1 User Details
+- content_for :header do
+  h1 User #{params[:id]}
 
-= render 'site/components/user', user_id: params[:id]
+article
+  = render 'site/components/user', user_id: params[:id]

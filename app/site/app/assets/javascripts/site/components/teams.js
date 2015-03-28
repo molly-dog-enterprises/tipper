@@ -1,5 +1,4 @@
 $(function() {
-
   var Teams = React.createClass({
     getInitialState: function() {
       return {
@@ -8,7 +7,7 @@ $(function() {
     },
     render: function () {
       return (
-        <DataTable fields={Fields.team} initialData={this.state.teamsData} />
+        <MDE.DataTable fields={MDE.Fields.team} initialData={this.state.teamsData} />
         );
     }
   });
