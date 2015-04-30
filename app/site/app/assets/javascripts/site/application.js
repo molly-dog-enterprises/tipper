@@ -15,3 +15,5 @@
 //= require ./constants/urls
 //= require ./constants/field-definitions
 //= require_tree ./components
+
+//= require ./images
