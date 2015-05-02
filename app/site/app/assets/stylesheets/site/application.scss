@@ -9,6 +9,6 @@ $body-color: #AADAE3;
 body {
   background: $body-color;
 }
-.menu-item a {
+.menu-item a, .menu-heading a {
   display: block;
 }

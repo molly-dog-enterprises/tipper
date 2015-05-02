@@ -25,5 +25,21 @@ body.container
           a href=leagues_path(event_slug: '2011') Leagues
         .menu-item
           a href="#" Players
-        .menu-item
-          a href=events_path View different event
+        .menu-heading
+          'Account
+        - if current_user
+          .menu-item
+            a href="#" Sign out
+          .menu-item
+            a href="#" Preferences
+          - current_user.events.each do |event|
+            .menu-item
+              a href="#" Change to: #{event}
+        - else
+          .menu-item
+            a href="#" Sign in
+          .menu-item
+            a href="#" Sign up
+        .menu-heading
+          a href=events_path Change event
+
