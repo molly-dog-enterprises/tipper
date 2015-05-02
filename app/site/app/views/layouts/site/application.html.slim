@@ -19,6 +19,11 @@ body.container
       = yield
     .one-fifth.column
       nav.menu
-        a.menu-item href="#" Events
-        a.menu-item href="#" Leagues
-        a.menu-item href="#" Users
+        .menu-heading
+          = current_event.name
+        .menu-item
+          a href=leagues_path(event_slug: '2011') Leagues
+        .menu-item
+          a href="#" Players
+        .menu-item
+          a href=events_path View different event
