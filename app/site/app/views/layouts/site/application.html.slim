@@ -21,25 +21,22 @@ body.container
       nav.menu
         .menu-heading
           = current_event.name
+          |  (
+          a href=events_path change
+          ')
         .menu-item
           a href=leagues_path(event_slug: '2011') Leagues
         .menu-item
           a href="#" Players
         .menu-heading
           'Account
-        - if current_user
+        #login
           .menu-item
-            a href="#" Sign out
-          .menu-item
-            a href="#" Preferences
+            | Loading..
+
+
+      - if current_user
           - current_user.events.each do |event|
             .menu-item
               a href="#" Change to: #{event}
-        - else
-          .menu-item
-            a href="#" Sign in
-          .menu-item
-            a href="#" Sign up
-        .menu-heading
-          a href=events_path Change event
 
