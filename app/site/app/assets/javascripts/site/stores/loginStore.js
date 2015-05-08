@@ -6,7 +6,6 @@ $(function() {
       this.bindActions(
         MDE.LoginConstants.LOGIN, this.onLogin,
         MDE.LoginConstants.LOGOUT, this.onLogout,
-        MDE.LoginConstants.SIGN_UP, this.onSignUp,
         MDE.LoginConstants.CANCEL, this.cancel
       );
     },
@@ -21,8 +20,8 @@ $(function() {
     },
 
     onLogout: function (payload) {
-      this.state = 'loggedOut';
-      localStorage.clear('userID'); // send message to server to logout tehre as well..
+      localStorage.clear('userID'); // TODO: send message to server to logout there as well..
+      this.state = this._calculateState();
       this.emit("change");
     },
 

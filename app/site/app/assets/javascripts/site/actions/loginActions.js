@@ -1,13 +1,13 @@
 $(function() {
   var actions = MDE.LoginActions = {
+    cancel: function() {
+      this.dispatch(MDE.LoginConstants.CANCEL);
+    },
     login: function() {
       this.dispatch(MDE.LoginConstants.LOGIN);
     },
-    signUp: function() {
-      this.dispatch(MDE.LoginConstants.SIGN_UP);
-    },
-    cancel: function() {
-      this.dispatch(MDE.LoginConstants.CANCEL);
+    logout: function() {
+      this.dispatch(MDE.LoginConstants.LOGOUT);
     }
   };
 
