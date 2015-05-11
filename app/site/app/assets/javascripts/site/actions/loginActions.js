@@ -8,6 +8,9 @@ $(function() {
     },
     logout: function() {
       this.dispatch(MDE.LoginConstants.LOGOUT);
+    },
+    signIn: function(name, password) {
+      this.dispatch(MDE.LoginConstants.SIGN_IN, {name: name, password: password});
     }
   };
 

@@ -2,6 +2,7 @@ $(function() {
   MDE.LoginConstants = {
     LOGIN: "LOGIN",
     LOGOUT: "LOGOUT",
-    CANCEL: "CANCEL"
+    CANCEL: "CANCEL",
+    SIGN_IN: "SIGN_IN"
   };
 });

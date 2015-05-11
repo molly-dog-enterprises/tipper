@@ -1,5 +1,10 @@
 $(function() {
+
+  var FluxMixin = Fluxxor.FluxMixin(React);
+
   MDE.LoggedIn = React.createClass({
+    mixins: [FluxMixin],
+
     getInitialState: function() {
       return {
         userID: localStorage.getItem('userID'),
@@ -14,7 +19,7 @@ $(function() {
             <a href="#" onClick={this.signOut}>Sign Out</a>
           </div>
           <div className="menu-item">
-            <a href="#" onClick="#">Preferences</a>
+            <a href={"/users/" + this.state.userID}>Preferences</a>
           </div>
         </div>
       )
