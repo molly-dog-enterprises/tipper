@@ -8,6 +8,7 @@ Site::Engine.routes.draw do
   end
 
   resources :events
+  resource :user, controller: :user
 
   post '/login' => 'sessions#login'
 end
