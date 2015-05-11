@@ -1,8 +1,22 @@
 $(function() {
-  var FluxMixin = Fluxxor.FluxMixin(React);
+  var FluxMixin = Fluxxor.FluxMixin(React),
+    StoreWatchMixin = Fluxxor.StoreWatchMixin;
 
   MDE.LoginForm = React.createClass({
-    mixins: [FluxMixin],
+    mixins: [FluxMixin, StoreWatchMixin("LoginStore")],
+
+    getStateFromFlux: function() {
+      var flux = this.getFlux();
+      // Our entire state is made up of the TodoStore data. In a larger
+      // application, you will likely return data from multiple stores, e.g.:
+      //
+      //   return {
+      //     todoData: flux.store("TodoStore").getState(),
+      //     userData: flux.store("UserStore").getData(),
+      //     fooBarData: flux.store("FooBarStore").someMoreData()
+      //   };
+      return flux.store("LoginStore").getErrors();
+    },
 
     getInitialState: function() {
       return {
@@ -17,13 +31,24 @@ $(function() {
       this.setState({ password: event.target.value });
     },
     render: function () {
+      var errors = '';
+      if(this.state.errors) {
+        errors = this.state.errors.map(function (error) {
+          return <div className='errors'>{error}</div>
+        });
+      }
+
       return (
         <div>
+          <div className="menu-heading">
+            Account
+          </div>
           <div className="menu-item">
-          Name
+            {errors}
+            Name
             <input type='text' value={this.state.name} onChange={this.updateNameText} />
             <br/>
-          Password
+            Password
             <input type='password' value={this.state.password} onChange={this.updatePasswordText}/>
             <br/>
 

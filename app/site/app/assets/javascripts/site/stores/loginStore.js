@@ -2,6 +2,7 @@ $(function() {
   MDE.LoginStore = Fluxxor.createStore({
     initialize: function () {
       this.state = this._calculateState();
+      self.errors = [];
 
       this.bindActions(
         MDE.LoginConstants.LOGIN, this.onLogin,
@@ -17,6 +18,7 @@ $(function() {
 
     onLogin: function () {
       this.state = 'login';
+      this.errors = [];
       this.emit("change");
     },
 
@@ -35,16 +37,17 @@ $(function() {
       }).success(function(response) {
         console.log('[success]');
         console.log(response);
-        localStorage.setItem('userID', payload.name) ;
-        self.state = self._calculateState();
+        if(response.status == 'success') {
+          localStorage.setItem('userID', payload.name);
+          self.state = self._calculateState();
+        } else {
+          self.errors = response.errors
+        }
         self.emit("change");
       }).error(function(response) {
         console.log('[error]');
         console.log(response);
       });
-
-//      debugger
-//      this.state = 'signUp';
     },
 
     onCancel: function() {
@@ -55,6 +58,11 @@ $(function() {
     getState: function () {
       return {
         state: this.state
+      };
+    },
+    getErrors: function () {
+      return {
+        errors: this.errors
       };
     }
   });

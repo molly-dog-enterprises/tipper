@@ -7,6 +7,9 @@ $(function() {
     render: function () {
       return (
         <div>
+          <div className="menu-heading">
+            Account
+          </div>
           <div className="menu-item">
             <a href="#" onClick={this.login}>Sign in</a>
           </div>
