@@ -27,6 +27,7 @@
 //= require ./components/data-table
 //= require ./components/league
 //= require ./components/leagues
+//= require ./components/leagues
 //= require ./components/pickSlider
 //= require ./components/picks
 //= require ./components/teams

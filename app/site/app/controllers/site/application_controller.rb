@@ -22,6 +22,5 @@ module Site
         Core::Event.last
       end
     end
-
   end
 end
