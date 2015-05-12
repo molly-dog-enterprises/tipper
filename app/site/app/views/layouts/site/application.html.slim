@@ -3,7 +3,7 @@ html lang="en"
 head
   meta charset="utf-8"
 
-  = javascript_include_tag "local_cdn/react-0.12.2", "local_cdn/JSXTransformer-0.12.2"
+  = javascript_include_tag "local_cdn/react-0.12.2", "local_cdn/JSXTransformer-0.12.2", "local_cdn/fluxxor"
   javascript:
     window.MDE = {};
   = javascript_include_tag "site/application", type: "text/jsx"
@@ -19,6 +19,24 @@ body.container
       = yield
     .one-fifth.column
       nav.menu
-        a.menu-item href="#" Events
-        a.menu-item href="#" Leagues
-        a.menu-item href="#" Users
+        .menu-heading
+          = current_event.name
+          |  (
+          a href=events_path change
+          ')
+        .menu-item
+          a href=leagues_path(event_slug: '2011') Leagues
+        .menu-item
+          a href="#" Players
+        #login
+          .menu-heading
+            'Account
+          .menu-item
+            | Loading..
+
+
+      - if current_user
+          - current_user.events.each do |event|
+            .menu-item
+              a href="#" Change to: #{event}
+

@@ -14,6 +14,20 @@
 //= require jquery_ujs
 //= require ./constants/urls
 //= require ./constants/field-definitions
-//= require_tree ./components
+
+//= require ./constants/loginConstants
+//= require ./stores/loginStore
+//= require ./actions/loginActions
+//= require_tree ./components/login
+//= require ./components/login
+
+//= require ./components/data-header
+//= require ./components/data-table
+//= require ./components/league
+//= require ./components/leagues
+//= require ./components/leagues
+//= require ./components/teams
+//= require ./components/user
+
 
 //= require ./images
