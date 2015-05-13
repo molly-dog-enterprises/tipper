@@ -12,8 +12,18 @@ body {
 .menu-item a {
   display: block;
 }
-
+// errors/what errors??
 .errors {
   font-size: 10px;
   color: red;
+}
+// need to work out how to format/display bulk content on teh screen..
+.copy-content {
+  white-space: pre-line;
+
+  blockquote {
+    margin: 10px 0;
+    text-align: right;
+  }
+
 }

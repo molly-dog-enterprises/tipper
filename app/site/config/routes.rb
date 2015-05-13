@@ -1,5 +1,5 @@
 Site::Engine.routes.draw do
-  root 'home#index'
+  root 'home#index', as: :home
 
   scope ':event_slug' do
     resources :leagues

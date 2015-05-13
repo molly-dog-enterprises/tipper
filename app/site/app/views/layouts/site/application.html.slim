@@ -18,25 +18,5 @@ body.container
     .four-fifths.column
       = yield
     .one-fifth.column
-      nav.menu
-        .menu-heading
-          = current_event.name
-          |  (
-          a href=events_path change
-          ')
-        .menu-item
-          a href=leagues_path(event_slug: '2011') Leagues
-        .menu-item
-          a href="#" Players
-        #login
-          .menu-heading
-            'Account
-          .menu-item
-            | Loading..
-
-
-      - if current_user
-          - current_user.events.each do |event|
-            .menu-item
-              a href="#" Change to: #{event}
+      = render 'layouts/site/side_nav'
 

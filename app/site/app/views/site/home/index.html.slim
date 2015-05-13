@@ -1,5 +1,8 @@
 - content_for :header do
-  h1 Playing is as easy..
+  h1= current_event.longname
+
+
+h3 Playing is as easy..
 
 .tile-container
   .tile.position-1
@@ -16,3 +19,10 @@
     .pos 3
     .header Score the lowest
     canvas
+
+- if (artice = current_event.articles.last)
+  .copy-content
+    = artice.copy
+    blockquote
+      '-
+      = link_to artice.source, artice.link

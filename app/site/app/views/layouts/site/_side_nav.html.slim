@@ -1,0 +1,18 @@
+
+nav.menu
+  .menu-heading
+    = current_event.name
+    |  (
+    a href=events_path change
+    ')
+  .menu-item
+    a href=home_path(event_slug: current_event.name) Home
+  .menu-item
+    a href=leagues_path(event_slug: current_event.name) Leagues
+  .menu-item
+    a href=teams_path(event_slug: current_event.name) Teams
+  #login
+    .menu-heading
+      'Account
+    .menu-item
+      | Loading..

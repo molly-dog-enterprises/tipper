@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150318211419) do
+ActiveRecord::Schema.define(version: 20150511211214) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "articles", force: :cascade do |t|
+    t.integer "item_id"
+    t.string  "item_type"
+    t.text    "copy"
+    t.string  "source"
+    t.string  "link"
+    t.date    "date"
+  end
+
+  add_index "articles", ["item_id"], name: "index_articles_on_item_id", using: :btree
 
   create_table "event_teams", force: :cascade do |t|
     t.integer  "team_id"
@@ -41,6 +52,7 @@ ActiveRecord::Schema.define(version: 20150318211419) do
     t.string   "event_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "longname"
   end
 
   create_table "guesses", force: :cascade do |t|
@@ -102,6 +114,7 @@ ActiveRecord::Schema.define(version: 20150318211419) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.binary   "image"
   end
 
   create_table "users", force: :cascade do |t|

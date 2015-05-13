@@ -1,5 +1,5 @@
 module Admin
-  class Event < ActiveRecord::Base
-    self.table_name = :events
+  class Event < ::Event
+    has_many :articles, as: :item
   end
 end

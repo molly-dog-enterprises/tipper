@@ -1,6 +1,10 @@
 require 'csv'
 
 class LoadHistoricalData
+  def self.run
+    new.run
+  end
+
   def run
     @mappings = Hash.new { |h, k| h[k] = {} }
     event = create_event
@@ -9,10 +13,25 @@ class LoadHistoricalData
     create_matches(event)
     create_users(event, leagues)
     create_guesses
+    create_articles
+  end
+
+  def create_articles
+    data = JSON.parse(File.read(Rails.root.join("lib/old_data/articles.json")))
+    data.each do |row|
+      klass = Admin.const_get(row['type'])
+      inst = klass.find_by!(name: row['name'])
+      article = inst.articles.find_or_initialize_by(link: row[:link])
+      article.update_attributes!(row.except("name", "type"))
+    end
   end
 
   def create_event
-    Admin::Event.find_or_create_by!(name: 'RWC 2011', event_type: 'ruby')
+    event = Admin::Event.find_or_initialize_by(name: 'RWC 2011', event_type: 'ruby')
+    event.update_attributes(
+      longname: 'Rugby World Cup 2011'
+    )
+    event
   end
 
   def create_leagues(event)
@@ -25,11 +44,14 @@ class LoadHistoricalData
 
   def create_teams(event)
     data('teams.csv').each do |row|
-      team = Admin::Team.find_or_create_by!(name: row['name'])
+      team = Admin::Team.find_or_initialize_by(name: row['name'])
+      # team.image = image_for(team)
+      team.save!
       event_team = Admin::EventTeam.find_or_create_by(event_id: event.id, team_id: team.id)
       @mappings[:teams][row['id']] = event_team
     end
   end
+
 
   def create_matches(event)
     data('matches.csv').each do |row|

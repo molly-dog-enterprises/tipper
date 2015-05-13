@@ -1,7 +1,7 @@
 module Core
-  class Team < ActiveRecord::Base
+  class Team < ::Team
     include Shared::ReadOnly
-    self.table_name = :teams
+    has_many :articles, as: :item
 
     def as_json(*args)
       {

@@ -1,5 +1,5 @@
 module Admin
-  class Team < ActiveRecord::Base
-    self.table_name = :teams
+  class Team < ::Team
+    has_many :articles, as: :item
   end
 end
