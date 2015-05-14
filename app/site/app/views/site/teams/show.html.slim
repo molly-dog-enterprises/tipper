@@ -1,0 +1,5 @@
+- content_for :header do
+  h1 Players in the League
+
+article
+  = render 'site/components/league', league_id: params[:id]

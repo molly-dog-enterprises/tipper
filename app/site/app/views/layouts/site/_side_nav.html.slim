@@ -6,11 +6,11 @@ nav.menu
     a href=events_path change
     ')
   .menu-item
-    a href=home_path(event_slug: current_event.name) Home
+    a href=home_path(event_slug: current_event.slug) Home
   .menu-item
-    a href=leagues_path(event_slug: current_event.name) Leagues
+    a href=leagues_path(event_slug: current_event.slug) Leagues
   .menu-item
-    a href=teams_path(event_slug: current_event.name) Teams
+    a href=teams_path(event_slug: current_event.slug) Teams
   #login
     .menu-heading
       'Account

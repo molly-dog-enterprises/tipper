@@ -4,6 +4,8 @@ module Core
 
     has_many :event_users
     has_many :users, through: :event_users
+    has_many :event_teams
+    has_many :teams, through: :event_teams
     has_many :articles, as: :item
 
     def as_json(*args)

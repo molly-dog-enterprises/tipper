@@ -47,7 +47,8 @@ class LoadHistoricalData
       team = Admin::Team.find_or_initialize_by(name: row['name'])
       # team.image = image_for(team)
       team.save!
-      event_team = Admin::EventTeam.find_or_create_by(event_id: event.id, team_id: team.id)
+      event_team = Admin::EventTeam.find_or_initialize_by(event_id: event.id, team_id: team.id)
+      event_team.update_attributes(group: "Pool #{row['pool']}")
       @mappings[:teams][row['id']] = event_team
     end
   end
