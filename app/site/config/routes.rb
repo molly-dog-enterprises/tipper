@@ -7,6 +7,7 @@ Site::Engine.routes.draw do
     resources :leagues
     resources :users
     resources :teams
+    resources :picks
   end
 
   resources :events

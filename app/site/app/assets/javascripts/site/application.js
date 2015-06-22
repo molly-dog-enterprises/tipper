@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require ../local_cdn/react-slider/react-slider
+
 //= require ./constants/urls
 //= require ./constants/field-definitions
 
@@ -25,9 +27,9 @@
 //= require ./components/data-table
 //= require ./components/league
 //= require ./components/leagues
-//= require ./components/leagues
+//= require ./components/pickSlider
+//= require ./components/picks
 //= require ./components/teams
 //= require ./components/user
-
 
 //= require ./images

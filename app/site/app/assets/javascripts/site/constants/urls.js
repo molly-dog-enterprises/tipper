@@ -19,6 +19,9 @@ $(function() {
     leagues: function(row, text) {
       return (<a href={URLs.Link.event + '/leagues'}>{text || 'leagues'}</a>);
     },
+    picks: function () {
+      return (<a href={URLs.Link.event + '/picks/'}>picks</a>);
+    },
     user: function (row) {
       return (<a href={URLs.Link.event + '/users/' + row.id}>{row.name}</a>);
     }

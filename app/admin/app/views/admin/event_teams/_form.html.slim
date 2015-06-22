@@ -16,5 +16,13 @@
     = f.label :event_id
     br
     = f.collection_select :team_id, Admin::Event.all, :id, :name
+  .field
+    = f.label :group
+    br
+    = f.text_field :group
+  .field
+    = f.label :image_class
+    br
+    = f.text_field :image_class
   .actions
     = f.submit

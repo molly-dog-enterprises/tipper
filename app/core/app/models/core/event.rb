@@ -7,6 +7,7 @@ module Core
     has_many :event_teams
     has_many :teams, through: :event_teams
     has_many :articles, as: :item
+    has_many :matches
 
     def as_json(*args)
       {

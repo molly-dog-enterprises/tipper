@@ -22,7 +22,7 @@ $(function() {
             <a href="#" onClick={this.signOut}>Sign Out</a>
           </div>
           <div className="menu-item">
-            <a href='#'>Picks</a>
+            {MDE.URLs.Link.picks()}
           </div>
           <div className="menu-item">
             <a href={"/users/" + this.state.userID}>Preferences</a>

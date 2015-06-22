@@ -30,8 +30,9 @@ ActiveRecord::Schema.define(version: 20150514070205) do
   create_table "event_teams", force: :cascade do |t|
     t.integer  "team_id"
     t.integer  "event_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "image_class"
     t.string   "group"
   end
 
@@ -116,7 +117,6 @@ ActiveRecord::Schema.define(version: 20150514070205) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.binary   "image"
   end
 
   create_table "users", force: :cascade do |t|

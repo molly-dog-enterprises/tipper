@@ -1,6 +1,6 @@
 module Site
   class TeamPresenter
-    delegate :group, :team,
+    delegate :group, :image_class, :team,
       to: :@event_team
     delegate :id, :name, :image,
       to: :team

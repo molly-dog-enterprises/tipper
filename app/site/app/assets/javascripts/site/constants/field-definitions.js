@@ -28,5 +28,20 @@ $(function() {
     {name: 'team', header: 'Favourite Team'},
   ];
 
+  Fields.picks = [
+    {name: 'start_time', header: 'Start'},
+//    {name: 'home', header: 'Home'},
+//    {name: 'away', header: 'Away'},
+    {name: 'location', header: 'Location'},
+    {name: 'pick', header: 'Pick', method: function(row) {
+      return <MDE.PickSlider row={row} />
+    }}
+  ];
+
+//  id: guess.id,
+//    team: guess.team.try(:id),
+//  by: guess.by,
+//    start_time: guess.match.start_time
+
 
 });

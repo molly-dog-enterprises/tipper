@@ -9,7 +9,7 @@ article
 
   - @teams_by_group.each do |group, teams|
     - if group
-      h3= "Group #{group}"
+      h3= group
     table.table
       thead
         tr
@@ -20,6 +20,7 @@ article
         - teams.each do |team|
           tr id="team-#{team.id}"
             td
+              .emblem class=team.image_class
             td= team.name
             td
               .no-wrap= team.news

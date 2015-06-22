@@ -48,7 +48,10 @@ class LoadHistoricalData
       # team.image = image_for(team)
       team.save!
       event_team = Admin::EventTeam.find_or_initialize_by(event_id: event.id, team_id: team.id)
-      event_team.update_attributes(group: "Pool #{row['pool']}")
+      event_team.update_attributes(
+        group: "Pool #{row['pool']}",
+        image_class: "emblem-2011 #{team.name.underscore.gsub(/ /, '-')}"
+      )
       @mappings[:teams][row['id']] = event_team
     end
   end

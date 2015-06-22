@@ -3,7 +3,7 @@ class AddSlugToEvent < ActiveRecord::Migration
     add_column :events, :slug, :string, null: false, default: 'null'
 
     Admin::Event.all.each do |event|
-      event.slug = event.name.downcase.underscore.gsub(/\s+/, '_')
+      event.slug = event.name.downcase.underscore.gsub(/[\s_]+/, '-')
       event.save!
     end
 
