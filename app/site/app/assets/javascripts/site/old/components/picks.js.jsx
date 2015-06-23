@@ -1,10 +1,9 @@
-$(function() {
-
-  var Picks = React.createClass({
+//$(function() {
+  var Picks = MDE.Picks = React.createClass({
     getInitialState: function() {
       return {
-        picksData: $('#picks').data('initial'),
-        matchesData: $('#picks').data('initial')
+        picksData: this.props.initial,
+        matchesData: this.props.matches
       };
     },
     render: function () {
@@ -21,10 +20,10 @@ $(function() {
   });
 
 
-  if(document.getElementById('picks')) {
-    React.render(
-      <Picks />,
-      document.getElementById('picks')
-    );
-  }
-});
+//  if(document.getElementById('picks')) {
+//    React.render(
+//      <Picks />,
+//      document.getElementById('picks')
+//    );
+//  }
+//});

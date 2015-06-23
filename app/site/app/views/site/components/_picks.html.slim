@@ -1,2 +1,5 @@
-#picks data-initial="#{@picks.to_json}" data-matches="#{@matches.to_json}"
+/= react_component('MDE.Picks', {picks: @picks, matches: @matches}, {prerender: true})
+= react_component('MDE.Picks', {picks: @picks, matches: @matches})
   | Waiting for your Picks to load..
+/#picks data-initial="#{@picks.to_json}" data-matches="#{@matches.to_json}"
+/  | Waiting for your Picks to load..

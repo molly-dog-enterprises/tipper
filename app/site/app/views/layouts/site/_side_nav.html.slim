@@ -20,4 +20,4 @@ nav.menu
   - if current_user
     - current_user.events.each do |event|
       .menu-item
-        a href="#" Change to: #{event}
+        a href="#" Change to: #{event.name}
