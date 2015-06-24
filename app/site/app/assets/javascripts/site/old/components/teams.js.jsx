@@ -7,7 +7,7 @@ $(function() {
     },
     render: function () {
       return (
-        <MDE.DataTable fields={MDE.Fields.team} initialData={this.state.teamsData} />
+        <MDE.Components.DataTable fields={MDE.Constants.Fields.team} initialData={this.state.teamsData} />
         );
     }
   });

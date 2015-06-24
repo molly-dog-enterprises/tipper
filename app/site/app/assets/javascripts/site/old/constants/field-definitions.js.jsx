@@ -1,6 +1,6 @@
-$(function() {
+MDE.Constants.Fields = (function() {
 
-  var Fields = MDE.Fields = {};
+  var Fields = {};
 
   Fields.guesses = [
     {name: 'match', header: 'Match'},
@@ -10,7 +10,7 @@ $(function() {
   ];
 
   Fields.league = [
-    {name: 'name', header: 'Name', method: MDE.URLs.Link.league},
+    {name: 'name', header: 'Name', method: MDE.Constants.URLs.Link.league},
     {name: 'description', header: 'Description'},
     {name: 'player_count', header: 'Player Count'},
     {name: 'password_protected', header: 'Password Required', method: function(row) { return row.password_protected ? 'YES' : 'NO' }},
@@ -23,7 +23,7 @@ $(function() {
   ];
 
   Fields.user = [
-    {name: 'name', header: 'Name', method: MDE.URLs.Link.user},
+    {name: 'name', header: 'Name', method: MDE.Constants.URLs.Link.user},
     {name: 'email', header: 'e-mail'},
     {name: 'team', header: 'Favourite Team'},
   ];
@@ -34,14 +34,9 @@ $(function() {
 //    {name: 'away', header: 'Away'},
     {name: 'location', header: 'Location'},
     {name: 'pick', header: 'Pick', method: function(row) {
-      return <MDE.PickSlider row={row} />
+      return <MDE.Constants.PickSlider row={row} />
     }}
   ];
 
-//  id: guess.id,
-//    team: guess.team.try(:id),
-//  by: guess.by,
-//    start_time: guess.match.start_time
-
-
-});
+  return Fields;
+})();

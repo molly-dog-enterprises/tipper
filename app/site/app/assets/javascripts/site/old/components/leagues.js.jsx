@@ -1,23 +1,14 @@
-$(function() {
-
-  var Leagues = React.createClass({
+MDE.Components.Leagues = (function() {
+  return React.createClass({
     getInitialState: function() {
       return {
-        leaguesData: $('#leagues').data('initial')
+        leaguesData: this.props.leagues
       };
     },
     render: function () {
       return (
-        <MDE.DataTable fields={MDE.Fields.league} initialData={this.state.leaguesData} />
+        <MDE.Components.DataTable fields={MDE.Constants.Fields.league} initialData={this.state.leaguesData} />
         );
     }
   });
-
-
-  if(document.getElementById('leagues')) {
-    React.render(
-      <Leagues url="" />,
-      document.getElementById('leagues')
-    );
-  }
-});
+})();

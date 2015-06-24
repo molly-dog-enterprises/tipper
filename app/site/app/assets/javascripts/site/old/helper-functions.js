@@ -1,5 +1,5 @@
-$(function() {
-  MDE.AJAX_REQUESTER = function (url, success) {
+MDE.AJAX_REQUESTER = (function() {
+  return function (url, success) {
     return $.ajax({
       url: url,
       dataType: 'json',
@@ -8,4 +8,4 @@ $(function() {
       }
     });
   };
-});
+})();

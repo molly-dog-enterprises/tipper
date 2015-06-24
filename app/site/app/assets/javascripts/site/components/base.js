@@ -1,1 +1,6 @@
-window.MDE = {};
+var MDE = {
+  Components: {},
+  Actions: {},
+  Constants: {},
+  Stores: {}
+};

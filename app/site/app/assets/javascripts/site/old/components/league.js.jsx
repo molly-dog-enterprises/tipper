@@ -1,10 +1,10 @@
-$(function() {
+MDE.Components.League = (function() {
 
-  var League = React.createClass({
+  return React.createClass({
     getInitialState: function() {
       return {
         usersData: [],
-        leagueData: $('#league').data('initial')
+        leagueData: this.props.league
       };
     },
     componentDidMount: function() {
@@ -13,7 +13,8 @@ $(function() {
         this.setState({usersData: data})
       };
 
-      var url = MDE.URLs.API.league_event_users(this.state.leagueData);
+      var url = MDE.Constants.URLs.API.league_event_users(this.state.leagueData);
+
       MDE.AJAX_REQUESTER(url).success(function(data) {
         self.setState({usersData: data});
       })
@@ -21,18 +22,11 @@ $(function() {
     render: function () {
       return (
         <div>
-          {MDE.URLs.Link.leagues(null, 'Back to leagues')}
-          <MDE.DataHeader fields={MDE.Fields.league} initialData={this.state.leagueData} />
-          <MDE.DataTable fields={MDE.Fields.user} initialData={this.state.usersData} />
+          {MDE.Constants.URLs.Link.leagues(null, 'Back to leagues')}
+          <MDE.Components.DataHeader fields={MDE.Constants.Fields.league} initialData={this.state.leagueData} />
+          <MDE.Components.DataTable fields={MDE.Constants.Fields.user} initialData={this.state.usersData} />
         </div>
       );
     }
   });
-
-  if(document.getElementById('league')) {
-    React.render(
-      <League url="" />,
-      document.getElementById('league')
-    );
-  }
-});
+})();

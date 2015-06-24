@@ -1,6 +1,5 @@
-$(function() {
-
-  var PickSlider = MDE.PickSlider = React.createClass({
+MDE.Constants.PickSlider = (function() {
+  return React.createClass({
     getInitialState: function() {
       var row = this.props.row;
       if(row.home === row.pick_name) {
@@ -26,4 +25,4 @@ $(function() {
       );
     }
   });
-});
+})();

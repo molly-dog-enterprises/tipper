@@ -1,6 +1,6 @@
-$(function() {
+MDE.Constants.URLs = (function() {
 
-  var URLs = MDE.URLs = { };
+  var URLs = { };
 
   URLs.API = {
     league_event_users: function (row) {
@@ -27,5 +27,5 @@ $(function() {
     }
   }
 
-
-});
+  return URLs;
+})();

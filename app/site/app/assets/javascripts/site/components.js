@@ -1,4 +1,4 @@
-//= require_tree ./components
+//= require ./components/base
 
 //= require ../local_cdn/react-slider/react-slider
 
