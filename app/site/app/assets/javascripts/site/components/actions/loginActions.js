@@ -1,16 +1,16 @@
-$(function() {
+(function() {
   var actions = MDE.LoginActions = {
     cancel: function() {
-      this.dispatch(MDE.LoginConstants.CANCEL);
+      this.dispatch(MDE.Constants.LoginConstants.CANCEL);
     },
     login: function() {
-      this.dispatch(MDE.LoginConstants.LOGIN);
+      this.dispatch(MDE.Constants.LoginConstants.LOGIN);
     },
     logout: function() {
-      this.dispatch(MDE.LoginConstants.LOGOUT);
+      this.dispatch(MDE.Constants.LoginConstants.LOGOUT);
     },
     signIn: function(name, password) {
-      this.dispatch(MDE.LoginConstants.SIGN_IN, {name: name, password: password});
+      this.dispatch(MDE.Constants.LoginConstants.SIGN_IN, {name: name, password: password});
     }
   };
 
@@ -25,4 +25,4 @@ $(function() {
       console.log("[Dispatch]", type, payload);
     }
   });
-});
+})();

@@ -1,10 +1,10 @@
-//= require local_cdn/fluxxor
 //= require jquery
 //= require jquery_ujs
 
 //= require react
 //= require react_ujs
 //= require ./components
+//= require ./images
 
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.

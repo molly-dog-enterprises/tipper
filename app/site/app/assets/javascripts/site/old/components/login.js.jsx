@@ -1,12 +1,13 @@
-$(function() {
+MDE.Components.LoginManager = (function() {
   var FluxMixin = Fluxxor.FluxMixin(React),
     StoreWatchMixin = Fluxxor.StoreWatchMixin;
 
-  var LoginManager = MDE.LoginManager = React.createClass({
+  return React.createClass({
     mixins: [FluxMixin, StoreWatchMixin("LoginStore")],
 
     getStateFromFlux: function() {
       var flux = this.getFlux();
+      var flux = MDE.flux;;
       // Our entire state is made up of the TodoStore data. In a larger
       // application, you will likely return data from multiple stores, e.g.:
       //
@@ -30,11 +31,4 @@ $(function() {
       }
     }
   });
-
-  if(document.getElementById('login')) {
-    React.render(
-      <LoginManager url="" flux={MDE.flux} />,
-      document.getElementById('login')
-    );
-  }
-});
+})();

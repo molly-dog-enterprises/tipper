@@ -1,9 +1,9 @@
-$(function() {
-  var User = React.createClass({
+MDE.Components.User = (function() {
+  return React.createClass({
     getInitialState: function() {
       return {
         guessesData: [],
-        userData: $('#user').data('initial')
+        userData: this.props.user
       };
     },
     componentDidMount: function() {
@@ -12,7 +12,7 @@ $(function() {
         this.setState({usersData: data})
       };
 
-      var url = MDE.Constants.URLs.API.league_event_users(this.state.leagueData);
+      var url = MDE.Constants.URLs.API.league_event_users(this.state.userData);
       MDE.AJAX_REQUESTER(url).success(function(data) {
         self.setState({usersData: data});
       })
@@ -29,11 +29,4 @@ $(function() {
       );
     }
   });
-
-  if(document.getElementById('user')) {
-    React.render(
-      <User url="" />,
-      document.getElementById('user')
-    );
-  }
-});
+})();

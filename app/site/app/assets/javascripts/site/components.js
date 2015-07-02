@@ -1,24 +1,26 @@
-//= require ./components/base
-
+//= require ../local_cdn/fluxxor
 //= require ../local_cdn/react-slider/react-slider
 
-//= require ./old/constants/urls
-//= require ./old/constants/field-definitions
+//= require ./components/base
 
-//= require ./old/constants/loginConstants
-//= require ./old/stores/loginStore
-//= require ./old/actions/loginActions
+//= require ./components/constants/urls
+//= require ./components/constants/field-definitions
+//= require ./components/constants/loginConstants
+
+//= require ./components/stores/loginStore
+//= require ./components/actions/loginActions
+
 //= require_tree ./old/components/login
 //= require ./old/components/login
 
-//= require ./old/components/data-header
-//= require ./old/components/data-table
-//= require ./old/components/league
-//= require ./old/components/leagues
-//= require ./old/components/leagues
-//= require ./old/components/pickSlider
-//= require ./old/components/picks
-//= require ./old/components/teams
-//= require ./old/components/user
+//= require ./components/components/data-header
+//= require ./components/components/data-table
+//= require ./components/components/league
+//= require ./components/components/leagues
+//= require ./components/components/leagues
+//= require ./components/components/pickSlider
+//= require ./components/components/picks
+//= require ./components/components/teams
+//= require ./components/components/user
 
-//= require ./old/images
+//= require ./components/helper-functions
