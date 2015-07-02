@@ -1,8 +1,8 @@
-$(function() {
+MDE.Components.LoggedIn = (function() {
 
   var FluxMixin = Fluxxor.FluxMixin(React);
 
-  MDE.LoggedIn = React.createClass({
+  return React.createClass({
     mixins: [FluxMixin],
 
     getInitialState: function() {
@@ -35,4 +35,4 @@ $(function() {
     }
   });
 
-});
+})();

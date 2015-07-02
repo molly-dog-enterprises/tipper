@@ -7,7 +7,6 @@ MDE.Components.LoginManager = (function() {
 
     getStateFromFlux: function() {
       var flux = this.getFlux();
-      var flux = MDE.flux;;
       // Our entire state is made up of the TodoStore data. In a larger
       // application, you will likely return data from multiple stores, e.g.:
       //
@@ -21,13 +20,13 @@ MDE.Components.LoginManager = (function() {
 
     render: function () {
       if(this.state.state === 'loggedIn') {
-        return (<MDE.LoggedIn />);
+        return (<MDE.Components.LoggedIn />);
       }
       if(this.state.state === 'loggedOut') {
-        return (<MDE.LoggedOut />);
+        return (<MDE.Components.LoggedOut />);
       }
       if(this.state.state === 'login') {
-        return (<MDE.LoginForm  />);
+        return (<MDE.Components.LoginForm  />);
       }
     }
   });

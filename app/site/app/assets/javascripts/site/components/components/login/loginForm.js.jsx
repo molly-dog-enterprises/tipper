@@ -1,8 +1,8 @@
-$(function() {
+MDE.Components.LoginForm = (function() {
   var FluxMixin = Fluxxor.FluxMixin(React),
     StoreWatchMixin = Fluxxor.StoreWatchMixin;
 
-  MDE.LoginForm = React.createClass({
+  return React.createClass({
     mixins: [FluxMixin, StoreWatchMixin("LoginStore")],
 
     getStateFromFlux: function() {
@@ -68,4 +68,4 @@ $(function() {
   });
 
 
-});
+})();

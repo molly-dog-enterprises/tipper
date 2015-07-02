@@ -2,6 +2,7 @@
 //= require ../local_cdn/react-slider/react-slider
 
 //= require ./components/base
+//= require ./components/flux-wrapper
 
 //= require ./components/constants/urls
 //= require ./components/constants/field-definitions
@@ -10,8 +11,8 @@
 //= require ./components/stores/loginStore
 //= require ./components/actions/loginActions
 
-//= require_tree ./old/components/login
-//= require ./old/components/login
+//= require_tree ./components/components/login
+//= require ./components/components/login_manager
 
 //= require ./components/components/data-header
 //= require ./components/components/data-table
