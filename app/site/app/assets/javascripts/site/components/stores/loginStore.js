@@ -1,14 +1,14 @@
-$(function() {
-  MDE.LoginStore = Fluxxor.createStore({
+MDE.LoginStore = (function() {
+  return Fluxxor.createStore({
     initialize: function () {
       this.state = this._calculateState();
       self.errors = [];
 
       this.bindActions(
-        MDE.LoginConstants.LOGIN, this.onLogin,
-        MDE.LoginConstants.LOGOUT, this.onLogout,
-        MDE.LoginConstants.CANCEL, this.onCancel,
-        MDE.LoginConstants.SIGN_IN, this.onSignIn
+        MDE.Constants.LoginConstants.LOGIN, this.onLogin,
+        MDE.Constants.LoginConstants.LOGOUT, this.onLogout,
+        MDE.Constants.LoginConstants.CANCEL, this.onCancel,
+        MDE.Constants.LoginConstants.SIGN_IN, this.onSignIn
       );
     },
 
@@ -66,4 +66,4 @@ $(function() {
       };
     }
   });
-});
+})();

@@ -1,4 +1,4 @@
-$(function() {
+MDE.Components.DataTable = (function() {
   function dataRequest(url, binding) {
     $.ajax({
       url: url,
@@ -10,7 +10,6 @@ $(function() {
         console.error(url, status, err.toString());
       }.bind(binding)
     });
-
   }
 
   var DataTableRow = React.createClass({
@@ -50,7 +49,7 @@ $(function() {
     }
   });
 
-  var DataTable = MDE.DataTable = React.createClass({
+  return React.createClass({
     render: function () {
       var self = this;
       var rows = this.props.initialData.map(function (row) {
@@ -67,4 +66,4 @@ $(function() {
       );
     }
   });
-});
+})();

@@ -1,8 +1,8 @@
-$(function() {
+MDE.Components.LoggedIn = (function() {
 
   var FluxMixin = Fluxxor.FluxMixin(React);
 
-  MDE.LoggedIn = React.createClass({
+  return React.createClass({
     mixins: [FluxMixin],
 
     getInitialState: function() {
@@ -22,7 +22,7 @@ $(function() {
             <a href="#" onClick={this.signOut}>Sign Out</a>
           </div>
           <div className="menu-item">
-            {MDE.URLs.Link.picks()}
+            {MDE.Constants.URLs.Link.picks()}
           </div>
           <div className="menu-item">
             <a href={"/users/" + this.state.userID}>Preferences</a>
@@ -35,4 +35,4 @@ $(function() {
     }
   });
 
-});
+})();

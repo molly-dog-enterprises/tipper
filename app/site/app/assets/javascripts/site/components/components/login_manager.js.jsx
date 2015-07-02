@@ -1,8 +1,8 @@
-$(function() {
+MDE.Components.LoginManager = (function() {
   var FluxMixin = Fluxxor.FluxMixin(React),
     StoreWatchMixin = Fluxxor.StoreWatchMixin;
 
-  var LoginManager = MDE.LoginManager = React.createClass({
+  return React.createClass({
     mixins: [FluxMixin, StoreWatchMixin("LoginStore")],
 
     getStateFromFlux: function() {
@@ -20,21 +20,14 @@ $(function() {
 
     render: function () {
       if(this.state.state === 'loggedIn') {
-        return (<MDE.LoggedIn />);
+        return (<MDE.Components.LoggedIn />);
       }
       if(this.state.state === 'loggedOut') {
-        return (<MDE.LoggedOut />);
+        return (<MDE.Components.LoggedOut />);
       }
       if(this.state.state === 'login') {
-        return (<MDE.LoginForm  />);
+        return (<MDE.Components.LoginForm  />);
       }
     }
   });
-
-  if(document.getElementById('login')) {
-    React.render(
-      <LoginManager url="" flux={MDE.flux} />,
-      document.getElementById('login')
-    );
-  }
-});
+})();

@@ -1,2 +1,2 @@
-#user data-initial="#{Core::User.find(user_id).to_json}"
+= react_component('MDE.Components.User', {user: Core::User.find(user_id)})
   | Waiting for user details to load..

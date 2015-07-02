@@ -3,10 +3,10 @@ html lang="en"
 head
   meta charset="utf-8"
 
-  = javascript_include_tag "local_cdn/react-0.12.2", "local_cdn/JSXTransformer-0.12.2", "local_cdn/fluxxor"
-  javascript:
-    window.MDE = {};
-  = javascript_include_tag "site/application", type: "text/jsx"
+  /= javascript_include_tag "local_cdn/react-0.12.2", "local_cdn/JSXTransformer-0.12.2", "local_cdn/fluxxor"
+  /javascript:
+  /  window.MDE = {};
+  = javascript_include_tag "site/application"
   = stylesheet_link_tag    "site/application", media: "all"
   = csrf_meta_tags
 

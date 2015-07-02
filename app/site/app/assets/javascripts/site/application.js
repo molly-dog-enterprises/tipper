@@ -1,3 +1,11 @@
+//= require jquery
+//= require jquery_ujs
+
+//= require react
+//= require react_ujs
+//= require ./components
+//= require ./images
+
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -10,27 +18,3 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
-//= require ../local_cdn/react-slider/react-slider
-
-//= require ./constants/urls
-//= require ./constants/field-definitions
-
-//= require ./constants/loginConstants
-//= require ./stores/loginStore
-//= require ./actions/loginActions
-//= require_tree ./components/login
-//= require ./components/login
-
-//= require ./components/data-header
-//= require ./components/data-table
-//= require ./components/league
-//= require ./components/leagues
-//= require ./components/leagues
-//= require ./components/pickSlider
-//= require ./components/picks
-//= require ./components/teams
-//= require ./components/user
-
-//= require ./images

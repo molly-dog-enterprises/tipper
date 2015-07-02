@@ -1,7 +1,7 @@
-$(function() {
+MDE.Components.LoggedOut = (function() {
   var FluxMixin = Fluxxor.FluxMixin(React);
 
-  MDE.LoggedOut = React.createClass({
+  return React.createClass({
     mixins: [FluxMixin],
 
     render: function () {
@@ -23,4 +23,4 @@ $(function() {
       this.getFlux().actions.login();
     },
   });
-});
+})();

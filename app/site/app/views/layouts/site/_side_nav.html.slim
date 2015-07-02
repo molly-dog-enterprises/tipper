@@ -11,7 +11,8 @@ nav.menu
     a href=leagues_path(event_slug: current_event.slug) Leagues
   .menu-item
     a href=teams_path(event_slug: current_event.slug) Teams
-  #login
+  = react_component('MDE.Components.FluxWrapper', elementClass: 'MDE.Components.LoginManager')
+
     .menu-heading
       'Account
     .menu-item
@@ -20,4 +21,4 @@ nav.menu
   - if current_user
     - current_user.events.each do |event|
       .menu-item
-        a href="#" Change to: #{event}
+        a href="#" Change to: #{event.name}

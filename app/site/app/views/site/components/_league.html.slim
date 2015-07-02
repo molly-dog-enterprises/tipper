@@ -1,2 +1,2 @@
-#league data-initial="#{Core::League.find(league_id).to_json}"
+= react_component('MDE.Components.League', {league: Core::League.find(league_id)})
   | Waiting for league details to load..

@@ -13,7 +13,7 @@ module Site
 
     def current_event
       if params[:event_slug]
-        event = Core::Event.find_by(slug: params[:event_slug])
+        event = Core::Event.find_by(slug: params[:event_slug]) || Core::Event.last # TODO: remove this hack and get the event_slug working properly..
         session[:event_id] = event.id
         event
       elsif session[:event_id]
