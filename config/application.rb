@@ -31,13 +31,8 @@ module Tipper
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
-    # Settings for the pool of renderers:
-    # config.react.server_renderer_pool_size  ||= 10
-    # config.react.server_renderer_timeout    ||= 20 # seconds
-    # config.react.server_renderer = React::ServerRendering::SprocketsRenderer
-    config.react.server_renderer_options = {
-      files: ["react.js", "./app/site/app/assets/javascripts/site/components.js"], # files to load for prerendering
-      replay_console: true,                 # if true, console.* will be replayed client-side
-    }
+    # array of filenames that will be requested from the asset pipeline
+    # and concatenated:
+    config.react.component_filenames = ['./app/site/app/assets/javascripts/site/components.js']
   end
 end
