@@ -1,7 +1,6 @@
 MDE.LoginStore = (function() {
   return Fluxxor.createStore({
     initialize: function () {
-      this.state = this._calculateState();
       self.errors = [];
 
       this.bindActions(
@@ -13,7 +12,13 @@ MDE.LoginStore = (function() {
     },
 
     _calculateState: function() {
-      return localStorage.getItem('userID') === null ? 'loggedOut' : 'loggedIn';
+      return !!this.userID ? 'loggedIn' : 'loggedOut';
+    },
+
+    getInitialState: function(_userID, _auth) {
+      this.userID = _userID;
+      this.auth = _auth;
+      this.state = this._calculateState();
     },
 
     onLogin: function () {
@@ -23,7 +28,8 @@ MDE.LoginStore = (function() {
     },
 
     onLogout: function () {
-      localStorage.clear('userID'); // TODO: send message to server to logout there as well..
+      this.userID = null; // TODO: send message to server to logout there as well..
+      this.auth = null; // TODO: send message to server to logout there as well..
       this.state = this._calculateState();
       this.emit("change");
     },
@@ -38,7 +44,7 @@ MDE.LoginStore = (function() {
         console.log('[success]');
         console.log(response);
         if(response.status == 'success') {
-          localStorage.setItem('userID', payload.name);
+          self.userID = payload.name;
           self.state = self._calculateState();
         } else {
           self.errors = response.errors
@@ -64,6 +70,12 @@ MDE.LoginStore = (function() {
       return {
         errors: this.errors
       };
+    },
+    getUserDetails: function() {
+      return {
+        userID: this.userID,
+        authToken: this.auth
+      }
     }
   });
 })();

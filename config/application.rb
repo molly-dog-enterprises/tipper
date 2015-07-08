@@ -35,9 +35,23 @@ module Tipper
     # config.react.server_renderer_pool_size  ||= 10
     # config.react.server_renderer_timeout    ||= 20 # seconds
     # config.react.server_renderer = React::ServerRendering::SprocketsRenderer
-    config.react.server_renderer_options = {
-      files: ["react.js", "./app/site/app/assets/javascripts/site/components.js"], # files to load for prerendering
-      replay_console: true,                 # if true, console.* will be replayed client-side
-    }
+    # config.react.server_renderer_options = {
+    #   files: ["react.js", "./app/site/app/assets/javascripts/site/components.js"], # files to load for prerendering
+    #   replay_console: true,                 # if true, console.* will be replayed client-side
+    # }
+
+    # renderer pool size:
+    config.react.max_renderers = 10
+    # prerender timeout, in seconds:
+    config.react.timeout = 20
+    # where to get React.js source:
+    config.react.react_js = lambda { File.read(::Rails.application.assets.resolve('react.js')) }
+    # array of filenames that will be requested from the asset pipeline
+    # and concatenated:
+    # config.react.component_filenames = [Rails.root.join("/app/site/app/assets/javascripts/site/components.js")]
+    config.react.component_filenames = ["site/components.js"]
+    # server-side console.log, console.warn, and console.error messages will be replayed on the client
+    # (you can set this to `true` in config/enviroments/development.rb to replay in development only)
+    config.react.replay_console = false
   end
 end

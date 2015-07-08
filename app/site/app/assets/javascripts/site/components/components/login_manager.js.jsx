@@ -15,6 +15,7 @@ MDE.Components.LoginManager = (function() {
       //     userData: flux.store("UserStore").getData(),
       //     fooBarData: flux.store("FooBarStore").someMoreData()
       //   };
+      flux.store("LoginStore").getInitialState(this.props.user_id, this.props.auth_token);
       return flux.store("LoginStore").getState();
     },
 
