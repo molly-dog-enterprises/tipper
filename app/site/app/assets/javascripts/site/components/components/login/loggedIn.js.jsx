@@ -1,15 +1,22 @@
 MDE.Components.LoggedIn = (function() {
-
-  var FluxMixin = Fluxxor.FluxMixin(React);
+  var FluxMixin = Fluxxor.FluxMixin(React),
+    StoreWatchMixin = Fluxxor.StoreWatchMixin;
 
   return React.createClass({
-    mixins: [FluxMixin],
+    mixins: [FluxMixin, StoreWatchMixin("LoginStore")],
 
-    getInitialState: function() {
-      return {
-        userID: localStorage.getItem('userID'),
-        authToken: localStorage.getItem('authToken')
-      }
+
+    getStateFromFlux: function() {
+      var flux = this.getFlux();
+      // Our entire state is made up of the TodoStore data. In a larger
+      // application, you will likely return data from multiple stores, e.g.:
+      //
+      //   return {
+      //     todoData: flux.store("TodoStore").getState(),
+      //     userData: flux.store("UserStore").getData(),
+      //     fooBarData: flux.store("FooBarStore").someMoreData()
+      //   };
+      return flux.store("LoginStore").getUserDetails();
     },
 
     render: function () {
